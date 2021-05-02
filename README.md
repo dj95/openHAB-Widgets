@@ -17,7 +17,7 @@ kind of these bugs.
 
 ## 📝 Table of contents
 
-- [Advanced Heating Cell](#advance-heating-cell)
+- [Advanced Heating Cell](#advanced-heating-cell)
 
 
 ## 🚀 Usage
