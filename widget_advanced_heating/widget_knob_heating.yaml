@@ -1,0 +1,62 @@
+uid: widget_knob_heating
+tags: []
+props:
+  parameters:
+    - context: text
+      description: The name of the thermostat
+      label: Name
+      name: name
+      required: false
+      type: TEXT
+    - context: item
+      description: The target temperature point
+      label: Thermostat
+      name: thermostat
+      required: true
+      type: TEXT
+  parameterGroups: []
+timestamp: May 2, 2021, 5:14:32 PM
+component: f7-card
+config:
+  style:
+    background: none
+    box-shadow: none
+    width: 100%
+slots:
+  default:
+    - component: f7-row
+      config:
+        style:
+          display: flex
+          justify-content: center
+          align-items: center
+      slots:
+        default:
+          - component: oh-knob
+            config:
+              item: =props.thermostat + "_TargetTemperature"
+              min: 5
+              max: 25
+              step: 1
+              size: 400
+    - component: f7-row
+      slots:
+        default:
+          - component: Label
+            config:
+              text: ="Soll-Temperatur " + props.name
+              style:
+                text-align: center
+                font-weight: bold
+                width: 100%
+    - component: f7-row
+      slots:
+        default:
+          - component: Label
+            config:
+              text: ="Aktuell " + items[props.thermostat + "_Temperature"].state
+              style:
+                text-align: center
+                width: 100%
+
+
